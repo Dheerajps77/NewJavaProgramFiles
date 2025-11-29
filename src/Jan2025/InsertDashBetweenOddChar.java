@@ -20,6 +20,22 @@ public class InsertDashBetweenOddChar {
 		return result.toString();
 	}
 
+public static String DashInsert(String str) {
+    StringBuilder sb = new StringBuilder();
+
+    for (int i = 0; i < str.length() - 1; i++) {
+        sb.append(str.charAt(i));
+
+        if ((str.charAt(i) % 2 == 1) && (str.charAt(i + 1) % 2 == 1)) {
+            sb.append('-');
+        }
+    }
+
+    sb.append(str.charAt(str.length() - 1)); // Add last char
+
+    return sb.toString();
+}
+
 	public static boolean isOdd(char c) {
 		return c == '1' || c == '3' || c == '5' || c == '7' || c == '9';
 	}
